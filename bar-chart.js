@@ -78,6 +78,16 @@ d3.csv("data.csv", function(d){
         .classed("clicked", true)
     }
 
+    d3.select(this)
+      .transition().duration(1000).ease(d3.easeElastic)
+      .attr("y", function(d){
+        return y(d.frequency)-30
+      })
+      .transition().duration(1000)
+      .ease(d3.easeBounce)
+      .attr("y", function(d){
+        return y(d.frequency)
+      })
 
   })
 
